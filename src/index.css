@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* ---- NEW THEME: Deep Slate + Amber/Gold ---- */
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  --primary:       #0f172a;   /* deep slate */
+  --primary-mid:   #1e293b;
+  --primary-light: #334155;
+  --accent:        #d97706;   /* amber-600  */
+  --accent-dark:   #b45309;   /* amber-700  */
+  --accent-light:  #f59e0b;   /* amber-500  */
+  --gold:          #fbbf24;   /* amber-400  */
+  --text-dark:     #0f172a;
+  --text-medium:   #475569;
+  --text-light:    #94a3b8;
+  --bg-light:      #f8fafc;
+  --border:        #e2e8f0;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--text-dark); background: #fff; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.section-subtitle {
+  color: var(--text-medium);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+.accent-bar {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+.btn-primary {
+  background: var(--accent);
+  color: #0f172a;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-outline:hover { background: white; color: var(--primary); }
+
+@media (max-width: 768px) { .section-title { font-size: 1.6rem; } }
