@@ -8,38 +8,33 @@ import {
 } from "react-icons/gi";
 
 const STEEL_IMG = "/images/WhatsApp_Image_2026-06-02_at_4.12.05_PM_(2).jpeg";
+
 const STEEL_FALLBACK =
   "https://images.pexels.com/photos/2218959/pexels-photo-2218959.jpeg?auto=compress&cs=tinysrgb&w=800";
 
 const APPS = [
   {
     name: "Steel Teeming Ladle",
-    desc: "Complete lining solutions for ladle working lining and safety lining.",
     Icon: GiMetalBar,
   },
   {
     name: "Electric Arc Furnace (EAF)",
-    desc: "Roof, sidewall and hearth refractories for EAF steelmaking.",
     Icon: GiElectric,
   },
   {
     name: "Basic Oxygen Furnace (BOF)",
-    desc: "Converter lining, taphole and bottom refractories for BOF steelmaking.",
     Icon: GiFurnace,
   },
   {
     name: "Continuous Casting Tundish",
-    desc: "Full tundish refractory systems including wear lining and flow control.",
     Icon: GiSteelClaws,
   },
   {
     name: "Torpedo Ladle",
-    desc: "High-performance refractories for hot metal transport torpedo ladles.",
     Icon: GiTank,
   },
   {
     name: "Rotary Kiln DRI",
-    desc: "Refractories for Direct Reduced Iron rotary kiln processes and calciners.",
     Icon: GiCoalWagon,
   },
 ];
@@ -48,94 +43,88 @@ export default function Industries() {
   return (
     <section
       id="industries"
-      className="py-20 md:py-28"
+      className="py-14 md:py-20"
       style={{ background: "#0f172a" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div
-          className="w-16 h-1 rounded-full mb-8"
-          style={{ background: "linear-gradient(90deg,#d97706,#f59e0b)" }}
+          className="w-16 h-1 rounded-full mb-6"
+          style={{
+            background: "linear-gradient(90deg,#d97706,#f59e0b)",
+          }}
         />
 
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          {/* Left */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
           <div>
             <span
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-bold mb-6 uppercase tracking-widest"
-              style={{ background: "rgba(217,119,6,0.2)", color: "#fbbf24" }}
+              className="inline-block px-4 py-1.5 rounded-full text-xs font-bold mb-5 uppercase tracking-widest"
+              style={{
+                background: "rgba(217,119,6,0.2)",
+                color: "#fbbf24",
+              }}
             >
               Industries We Serve
             </span>
+
             <h2
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
+              className="text-3xl md:text-4xl font-bold text-white mb-5"
               style={{ fontFamily: "'Roboto Slab',serif" }}
             >
               Iron &amp; Steel Industry Solutions
             </h2>
+
             <p
-              className="text-base mb-10 leading-relaxed"
-              style={{ color: "#64748b" }}
+              className="text-base mb-8 leading-relaxed"
+              style={{ color: "#94a3b8" }}
             >
               Champion Magnesite specializes in complete refractory solutions
               for the Iron &amp; Steel industry. Our products withstand extreme
-              temperatures and harsh chemical environments in every stage of
-              steelmaking.
+              temperatures and harsh chemical environments throughout the
+              steelmaking process.
             </p>
 
-            <div className="space-y-3">
-              {APPS.map(({ name, desc, Icon }, i) => (
+            {/* Compact 2 Column Applications */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {APPS.map(({ name, Icon }, i) => (
                 <div
                   key={i}
-                  className="flex gap-4 p-4 rounded-xl transition-all duration-200"
+                  className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300"
                   style={{
                     background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.08)",
                   }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.background = "rgba(217,119,6,0.08)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.background =
-                      "rgba(255,255,255,0.04)")
-                  }
                 >
                   <div
-                    className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center"
+                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                     style={{
                       background: "linear-gradient(135deg,#d97706,#f59e0b)",
-                      minWidth: "2.25rem",
                     }}
                   >
                     <Icon className="w-5 h-5" style={{ color: "#0f172a" }} />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-white mb-0.5">
-                      {name}
-                    </h4>
-                    <p
-                      className="text-xs leading-relaxed"
-                      style={{ color: "#64748b" }}
-                    >
-                      {desc}
-                    </p>
-                  </div>
+
+                  <span className="text-sm font-medium text-white leading-snug">
+                    {name}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right – image */}
+          {/* Right Image */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <img
                 src={STEEL_IMG}
                 alt="Steel manufacturing plant"
-                className="w-full h-96 lg:h-[540px] object-cover"
+                className="w-full h-80 lg:h-[450px] object-cover"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = STEEL_FALLBACK;
                 }}
               />
+
               <div
                 className="absolute inset-0"
                 style={{
@@ -144,21 +133,23 @@ export default function Industries() {
                 }}
               />
             </div>
+
             <div
-              className="absolute -bottom-6 -left-6 hidden md:block rounded-2xl p-6 shadow-2xl"
+              className="absolute -bottom-5 -left-5 hidden md:block rounded-2xl p-5 shadow-2xl"
               style={{
                 background: "linear-gradient(135deg,#d97706,#f59e0b)",
                 color: "#0f172a",
-                minWidth: "190px",
+                minWidth: "180px",
               }}
             >
               <div
-                className="text-4xl font-bold mb-0.5"
+                className="text-3xl font-bold"
                 style={{ fontFamily: "'Roboto Slab',serif" }}
               >
                 6+
               </div>
-              <div className="text-xs font-semibold">
+
+              <div className="text-xs font-semibold mt-1">
                 Specialized Steel Industry Applications
               </div>
             </div>

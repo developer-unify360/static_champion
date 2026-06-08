@@ -89,7 +89,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#products"
-            className="btn-primary text-base px-8 py-3.5 inline-flex items-center gap-2"
+            className="btn-primary text-base px-2 py-3.5 inline-flex items-center gap-2"
           >
             <FiPackage className="w-5 h-5" /> Explore Products
           </a>

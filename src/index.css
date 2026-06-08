@@ -57,7 +57,10 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
   border: none;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
-  display: inline-block;
+  display: inline-flex;      /* Changed */
+  align-items: center;       /* Added */
+  justify-content: center;   /* Optional */
+  gap: 0.5rem; 
   text-decoration: none;
 }
 .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
@@ -72,7 +75,10 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
   border: 2px solid rgba(255,255,255,0.7);
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
-  display: inline-block;
+  display: inline-flex;      /* Changed */
+  align-items: center;       /* Added */
+  justify-content: center;   /* Optional */
+  gap: 0.5rem; 
   text-decoration: none;
 }
 .btn-outline:hover { background: white; color: var(--primary); }
