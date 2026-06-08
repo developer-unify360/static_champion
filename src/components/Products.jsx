@@ -20,6 +20,7 @@ const PRODUCTS = [
     desc: "High-quality fired bricks and custom shapes for all grades of high-temperature industrial applications.",
     Icon: GiClayBrick,
     color: "#b45309",
+    image: "/images/fire-bricks.jpg",
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const PRODUCTS = [
     desc: "Superior thermal resistance and mechanical strength across all alumina grades up to 85%.",
     Icon: GiBrickWall,
     color: "#0f172a",
+    image: "/images/high-alumina-bricks.jpg",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const PRODUCTS = [
     desc: "Basic bricks, Magnesia Carbon (MgO-C) and AMC bricks for steel converters, ladles and furnaces.",
     Icon: GiMetalBar,
     color: "#334155",
+    image: "/images/BasicBricks-MagnesiaCarbon-&-AMC.jpg"
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ const PRODUCTS = [
     desc: "High-strength silicon carbide bricks offering excellent thermal conductivity and abrasion resistance.",
     Icon: GiCrystalBall,
     color: "#0e7490",
+    image: "/images/silicon-carbide-bricks.jpg"
   },
   {
     id: 5,
