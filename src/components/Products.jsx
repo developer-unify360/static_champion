@@ -20,7 +20,7 @@ const PRODUCTS = [
     desc: "High-quality fired bricks and custom shapes for all grades of high-temperature industrial applications.",
     Icon: GiClayBrick,
     color: "#b45309",
-    image: "/images/fire-bricks.jpg",
+    image: "/images/Fire-Bricks-&-Shapes.jpg",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const PRODUCTS = [
     desc: "Superior thermal resistance and mechanical strength across all alumina grades up to 85%.",
     Icon: GiBrickWall,
     color: "#0f172a",
-    image: "/images/high-alumina-bricks.jpg",
+    image: "/images/High-Alumina-Bricks.jpg",
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const PRODUCTS = [
     desc: "High-strength silicon carbide bricks offering excellent thermal conductivity and abrasion resistance.",
     Icon: GiCrystalBall,
     color: "#0e7490",
-    image: "/images/silicon-carbide-bricks.jpg"
+    image: "/images/Silicon-Carbide-Bricks.jpg"
   },
   {
     id: 5,
@@ -139,39 +139,36 @@ export default function Products() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {PRODUCTS.map(({ id, name, desc, Icon, color }) => (
+          {PRODUCTS.map(({ id, name, desc, Icon, color, image }) => (
             <div
               key={id}
-              className="card-hover rounded-2xl p-6 bg-white"
-              style={{
-                border: "1px solid #e2e8f0",
-                boxShadow: "0 1px 8px rgba(0,0,0,0.05)",
-              }}
+              className="group relative overflow-hidden rounded-2xl min-h-[280px]"
             >
-              <div
-                className="h-1 -mx-6 -mt-6 mb-6 rounded-t-2xl"
-                style={{
-                  background: `linear-gradient(90deg,${color}55,${color}22)`,
-                }}
+              {/* Background Image */}
+              <img
+                src={image}
+                alt={name}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: `${color}14` }}
-              >
-                <Icon className="w-6 h-6" style={{ color }} />
+
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/70"></div>
+
+              {/* Content */}
+              <div className="relative z-10 p-6 h-full flex flex-col">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                  style={{ background: "rgba(255,255,255,0.15)" }}
+                >
+                  <Icon className="w-6 h-6 text-white" />
+                </div>
+
+                <h3 className="font-bold text-white text-sm mb-2 leading-snug">
+                  {name}
+                </h3>
+
+                <p className="text-sm text-slate-200 leading-relaxed">{desc}</p>
               </div>
-              <h3
-                className="font-bold text-sm mb-2 leading-snug"
-                style={{ color }}
-              >
-                {name}
-              </h3>
-              <p
-                className="text-xs leading-relaxed"
-                style={{ color: "#64748b" }}
-              >
-                {desc}
-              </p>
             </div>
           ))}
         </div>
